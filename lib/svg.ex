@@ -4,7 +4,8 @@ defmodule SVG do
   """
 
   @doc """
-  Reads a file, then URI-encodes contents.
+  Reads a file, then URI-encodes contents,
+  prepending "data:image..." markup.
   """
   @spec read_and_uri_encode!(String.t) :: String.t
   def read_and_uri_encode!(path) do
@@ -16,7 +17,8 @@ defmodule SVG do
   end
 
   @doc """
-  Reads a file, then base64-encodes contents.
+  Reads a file, then base64-encodes contents,
+  prepending "data:image..." markup.
   """
   @spec read_and_encode64!(String.t) :: String.t
   def read_and_encode64!(path) do

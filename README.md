@@ -1,4 +1,5 @@
-# SVG
+# SVG  [![hex.pm](https://img.shields.io/hexpm/v/svg.svg?style=flat-square)](https://hex.pm/packages/svg) [![hexdocs.pm](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://hexdocs.pm/svg)
+
 
 Tools for caching and serving SVGs.
 
@@ -40,7 +41,7 @@ defmodule YourApp do
 end
 ```
 
-The server will build up cache when the main application starts. It will read all svgs in your `priv/static/images` folder. You can then get the base64 encoded svg like so:
+The server will build up cache when the main application starts. It will concurrently read all svgs in your `priv/static/images` folder and cache them in memory. You can then use base64 encoded svg like so:
 
 ```elixir
 <img src="<%=raw SVG.Server.get("icons/add") %>">
@@ -52,6 +53,11 @@ Where `icons/add` corresponds to `priv/static/icons/add.svg` on the filesystem. 
 alias SVG.Server, as: SVG
 ```
 and then you can use `SVG.get/1` directly.
+
+## Utility functions
+
+See [docs](https://hexdocs.pm/svg/SVG.html) for functions available on the main SVG module.
+
 
 ## About
 
