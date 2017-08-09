@@ -41,13 +41,13 @@ defmodule YourApp do
 end
 ```
 
-The server will build up cache when the main application starts. It will concurrently read all svgs in your `priv/static/images` folder and cache them in memory. You can then use base64 encoded svg like so:
+The server will build up cache when the main application starts. It will concurrently read all svgs in your `priv/static/images` folder and cache them in memory. You can then use the base64 encoded svgs like so:
 
 ```elixir
 <img src="<%=raw SVG.Server.get("icons/add") %>">
 ```
 
-Where `icons/add` corresponds to `priv/static/icons/add.svg` on the filesystem. You may want to alias the server when using in templates:
+Where `icons/add` corresponds to `priv/static/images/icons/add.svg` on the filesystem. You may want to alias the server when using in templates:
 
 ```elixir
 alias SVG.Server, as: SVG
