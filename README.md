@@ -1,7 +1,7 @@
 # SVG  [![hex.pm](https://img.shields.io/hexpm/v/svg.svg?style=flat-square)](https://hex.pm/packages/svg) [![hexdocs.pm](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://hexdocs.pm/svg)
 
 
-Tools for caching and serving SVGs.
+Tools for caching and serving SVGs for Phoenix.
 
 ## Installation
 
@@ -19,7 +19,7 @@ Then configure it in your `config.exs`:
 config :svg, otp_app: :my_app # Replace :my_app
 ```
 
-## Using encoded SVGs at runtime
+## Using base64 encoded SVGs at runtime
 
 Run the background server:
 

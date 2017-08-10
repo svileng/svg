@@ -38,6 +38,7 @@ defmodule SVG do
 
       iex> name_from_path("/some/path/images/logo.svg", "/some/path/images")
       "logo"
+
       iex> name_from_path("/some/path/images/logo.svg", "/some/path")
       "images/logo"
   """

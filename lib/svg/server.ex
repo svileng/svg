@@ -1,6 +1,6 @@
 defmodule SVG.Server do
   @moduledoc """
-  SVG cache and interface for Phoenix.
+  Cache for base64 encoded SVGs.
 
   To use in templates:
 
@@ -77,7 +77,7 @@ defmodule SVG.Server do
 
   @doc false
   def handle_call({:get, name}, _from, cache) do
-    result = Enum.find(cache, nil, &(&1.name == name))
+    result = Enum.find(cache, %{svg: nil}, &(&1.name == name))
     {:reply, result.svg, cache}
   end
 end
