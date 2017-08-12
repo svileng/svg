@@ -8,7 +8,7 @@ Tools for caching and serving encoded SVGs for Phoenix.
 Add to your `mix.exs` as usual:
 ```elixir
 def deps do
-  [{:svg, "~> 1.0.0"}]
+  [{:svg, "~> 1.0"}]
 end
 ```
 If you're not using [application inference](https://elixir-lang.org/blog/2017/01/05/elixir-v1-4-0-released/#application-inference), then add `:svg` to your `applications` list.
