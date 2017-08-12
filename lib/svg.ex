@@ -1,7 +1,5 @@
 defmodule SVG do
-  @moduledoc """
-  Tools for caching and serving SVGs.
-  """
+  @moduledoc "Main application module."
 
   @doc """
   Reads a file, then URI-encodes contents,

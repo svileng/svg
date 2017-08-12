@@ -1,7 +1,7 @@
 # SVG  [![hex.pm](https://img.shields.io/hexpm/v/svg.svg?style=flat-square)](https://hex.pm/packages/svg) [![hexdocs.pm](https://img.shields.io/badge/docs-latest-green.svg?style=flat-square)](https://hexdocs.pm/svg)
 
 
-Tools for caching and serving SVGs for Phoenix.
+Tools for caching and serving encoded SVGs for Phoenix.
 
 ## Installation
 
@@ -13,18 +13,40 @@ end
 ```
 If you're not using [application inference](https://elixir-lang.org/blog/2017/01/05/elixir-v1-4-0-released/#application-inference), then add `:svg` to your `applications` list.
 
-Then configure it in your `config.exs`:
+## Replacing urls to SVGs in your CSS
+
+Using the `mix svg.encode` task, all references to svg files in your `priv/static/css` will be replaced with the base64 encoded svg.
+
+For example, if you have an `app.css` file with the following contents:
+
+```css
+.foo {
+  background-url: url(/icons/add.svg)
+}
+```
+
+it will be transformed to this:
+
+```css
+.foo {
+  background-url: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0ia...)
+}
+```
+
+By default, task will look for SVGs in the `/priv/static/images` folder.
+
+## Using encoded SVGs at runtime
+
+You need to configure `:svg` in your `config.exs` first:
 
 ```elixir
 config :svg, otp_app: :my_app # Replace :my_app
 ```
 
-## Using base64 encoded SVGs at runtime
-
-Run the background server:
+And then run the background server:
 
 ```elixir
-defmodule YourApp do
+defmodule MyApp do
   use Application
 
   def start(_type, _args) do
@@ -58,6 +80,12 @@ and then you can use `SVG.get/1` directly.
 
 See [docs](https://hexdocs.pm/svg/SVG.html) for functions available on the main SVG module.
 
+## Roadmap
+
+- ~~Mix task for replacing svg refs in CSS~~
+- Option for URI-encoding instead of Base64
+- Option for raw svg output (no encoding, just inline)
+- Use SVGO if installed locally
 
 ## About
 
@@ -69,3 +97,4 @@ This project is sponsored by [Heresy](http://heresy.io). We're always looking fo
 
 - svg: See LICENSE file.
 - "Heresy" name and logo: Copyright © 2017 Heresy Software Ltd
+

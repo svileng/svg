@@ -1,7 +1,7 @@
 defmodule SVG.Mixfile do
   use Mix.Project
 
-  @version "1.0.1"
+  @version "1.1.0"
 
   def project do
     [
@@ -10,9 +10,9 @@ defmodule SVG.Mixfile do
       elixir: "~> 1.5",
       package: package(),
       name: "SVG",
-      description: "Tools for caching/serving SVGs for Phoenix.",
+      description: "Tools for caching/serving encoded SVGs for Phoenix.",
       docs: [
-        main: "SVG",
+        main: "readme",
         extras: ["README.md"],
         source_url: "https://github.com/heresydev/svg",
         source_ref: @version
