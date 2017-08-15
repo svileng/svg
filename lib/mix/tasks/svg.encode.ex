@@ -42,7 +42,7 @@ defmodule Mix.Tasks.Svg.Encode do
     Mix.shell.info([:cyan, ">> [SVG.Encode] Reading #{path}"])
     content = File.read!(path)
     new_content = Regex.replace(@svg_url_regex, content, fn _, open, url, close ->
-      svg = Enum.find(svgs, false, &(String.contains?(url, &1.path_name)))
+      svg = Enum.find(svgs, false, &(String.ends_with?(url, "#{&1.path_name}.svg")))
       if svg do
         Mix.shell.info("[SVG.Encode] Replacing with base64 value: #{url}")
         open <> svg.data <> close
