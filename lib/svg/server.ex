@@ -26,7 +26,7 @@ defmodule SVG.Server do
   #
 
   @doc "Starts server."
-  def start_link() do
+  def start_link(_args) do
     GenServer.start_link(__MODULE__, :ok, name: @name)
   end
 
