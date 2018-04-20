@@ -89,7 +89,7 @@ See [docs](https://hexdocs.pm/svg/SVG.html) for functions available on the main 
 
 ## About
 
-<img src="https://app.heresy.io/images/logo-dark.svg" height="50px">
+<img src="http://cdn.heresy.io/media/logo.png" height="50px">
 
 This project is sponsored by [Heresy](http://heresy.io). We're always looking for great engineers to join our team, so if you love Elixir, open source and enjoy some challenge, drop us a line and say hello!
 
